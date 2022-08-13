@@ -1,4 +1,4 @@
-# template-vite-js-tailwind-v3
+# FUTICONS
 
 - **tailwindcss:** v3.x
 
