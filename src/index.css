@@ -2,6 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
-a {
-  @apply text-blue-500 hover:text-blue-400 hover:underline transition-all;
+/* Global ------------------------- */
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("../fonts/Inter-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+
+/* Style guide ------------------------- */
+
+@layer components {
+  .heading-1 {
+    @apply  text-5xl font-semibold;
+  }
+}
+
+html, body {
+  font-family: "Inter", Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Home ------------------------- */
+
+@keyframes moveRight {
+  from{
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes moveLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes flickerFix {
+  45% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  55% {
+    opacity: 1;
+  }
+}
+
+.icon-container {
+  transform: rotate(-21deg) translateY(-17%);
+}
+
+.icon-row-1 {
+  animation: moveRight 40s infinite linear;
+}
+
+.icon-row-2 {
+  animation: moveLeft 40s infinite linear;
+}
+
+.color-gradient {
+  animation: flickerFix 40s infinite linear;
+  animation-delay: 20s;
 }
