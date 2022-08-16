@@ -25,6 +25,13 @@
   font-style: normal;
 }
 
+html,
+body {
+  font-family: "Inter", Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 
 /* Style guide ------------------------- */
 
@@ -34,12 +41,18 @@
   }
 }
 
-html,
-body {
-  font-family: "Inter", Helvetica, sans-serif;
-  margin: 0;
-  padding: 0;
+@layer components {
+  .blue-gradient-1 {
+    @apply bg-gradient-to-r from-ftPurple-400 via-ftPurple-200 to-ftBlue-200;
+  }
 }
+
+@layer components {
+  .button-primary-large {
+    @apply px-6 py-3 text-white blue-gradient-1 flex justify-center items-center text-lg rounded-lg font-medium
+  }
+}
+
 
 
 /* Home ------------------------- */

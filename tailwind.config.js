@@ -3,16 +3,25 @@
 module.exports = {
   content: ['index.html','./src/**/*.{js,jsx,ts,tsx,vue,html}'],
   theme: {
-    extend: {},
-    colors: {
-      'ft-black': '#060606',
-      'ft-purple-100': '#B070F1',
-      'ft-purple-200': '#9D60DB',
-      'ft-purple-300': '#9F54FF',
-      'ft-purple-400': '#883DE7',
-      'ft-blue-100': '#6D85FF',
-      'ft-blue-200': '#384FCD',
-      'ft-grey-100': '#8C8DAF'
+    extend: {
+      colors: {
+        ftBlack: {
+          100: '#060606'
+        },
+        ftGrey: {
+          100: '#8C8DAF'
+        },
+        ftPurple: {
+          100: '#B070F1',
+          200: '#9D60DB',
+          300: '#9F54FF',
+          400: '#883DE7',
+        },
+        ftBlue: {
+          100: '#6D85FF',
+          200: '#384FCD'
+        }
+      }
     },
   },
   plugins: [],

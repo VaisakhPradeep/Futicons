@@ -1,76 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Futicons</title>
-  </head>
-  <body>
-    <header class="min-h-screen w-full bg-black relative">
-      <nav></nav>
-      <div class="w-full h-screen flex justify-center items-center">
-        <div class="z-50">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Futicons</title>
+</head>
+
+<body>
+  <header class="min-h-screen w-full bg-black relative">
+    <nav></nav>
+    <div class="w-full h-screen flex justify-center items-center">
+      <!-- <div class="z-50 backdrop-blur-sm bg-black/20 shadow-lg shadow-black-500/50 p-12"> -->
+      <div class="z-50 p-12 relative">
+        <div class="z-10 relative">
+          <div class="flex justify-center my-2">
+            <h3 class="blue-gradient-1 inline-block bg-clip-text text-transparent text-center tracking-[.5em]">FUTICONS
+            </h3>
+          </div>
           <h1 class="heading-1 text-white text-center">Icons for the future</h1>
-        </div>
-      </div>
-      <div class="w-full h-screen absolute bg-black opacity-10 left-0 top-0 overflow-hidden z-40">
-      </div>
-      <div class="w-full h-screen absolute left-0 top-0 overflow-hidden z-30">
-        <img src="./src/assets/radial_gradient_overlay.png" alt="" class="w-full h-full">
-      </div>
-      <div class="w-full h-screen absolute left-0 top-0 overflow-hidden icon-banner z-20 mix-blend-multiply">
-        <div class="icon-container">
-          <div class="icon-row-1 flex">
-            <img src="./src/assets/icon_row1.png" class="icon-row w-full relative" alt="">
-            <img src="./src/assets/icon_row1.png" class="icon-row w-full relative" alt="">
-          </div>
-          <div class="icon-row-2 flex">
-            <img src="./src/assets/icon_row2.png" class="icon-row w-full relative" alt="">
-            <img src="./src/assets/icon_row2.png" class="icon-row w-full relative" alt="">
-          </div>
-          <div class="icon-row-1 flex">
-            <img src="./src/assets/icon_row3.png" class="icon-row w-full relative" alt="">
-            <img src="./src/assets/icon_row3.png" class="icon-row w-full relative" alt="">
-          </div>
-          <div class="icon-row-2 flex">
-            <img src="./src/assets/icon_row4.png" class="icon-row w-full relative" alt="">
-            <img src="./src/assets/icon_row4.png" class="icon-row w-full relative" alt="">
-          </div>
-          <div class="icon-row-1 flex">
-            <img src="./src/assets/icon_row5.png" class="icon-row w-full relative" alt="">
-            <img src="./src/assets/icon_row5.png" class="icon-row w-full relative" alt="">
-          </div>
-          <div class="icon-row-2 flex">
-            <img src="./src/assets/icon_row6.png" class="icon-row w-full relative" alt="">
-            <img src="./src/assets/icon_row6.png" class="icon-row w-full relative" alt="">
-          </div>
-          <div class="icon-row-1 flex">
-            <img src="./src/assets/icon_row7.png" class="icon-row w-full relative" alt="">
-            <img src="./src/assets/icon_row7.png" class="icon-row w-full relative" alt="">
-          </div>
-          <div class="icon-row-2 flex">
-            <img src="./src/assets/icon_row8.png" class="icon-row w-full relative" alt="">
-            <img src="./src/assets/icon_row8.png" class="icon-row w-full relative" alt="">
-          </div>
-          <div class="icon-row-1 flex">
-            <img src="./src/assets/icon_row9.png" class="icon-row w-full relative" alt="">
-            <img src="./src/assets/icon_row9.png" class="icon-row w-full relative" alt="">
-          </div>
-          <div class="icon-row-2 flex">
-            <img src="./src/assets/icon_row10.png" class="icon-row w-full relative" alt="">
-            <img src="./src/assets/icon_row10.png" class="icon-row w-full relative" alt="">
-          </div>
-          <div class="icon-row-1 flex">
-            <img src="./src/assets/icon_row1.png" class="icon-row w-full relative" alt="">
-            <img src="./src/assets/icon_row1.png" class="icon-row w-full relative" alt="">
+          <div class="flex flex-col md:flex-row justify-center mt-8">
+            <button class="button-primary-large">
+              <svg class="w-4 mr-3" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                  d="M10.6363 2.62744C10.6363 1.72371 9.90366 0.991089 8.99993 0.991089C8.0962 0.991089 7.36358 1.72371 7.36358 2.62744V16.4634L2.64105 12.7903C1.92769 12.2355 0.899607 12.364 0.344769 13.0774C-0.210069 13.7907 -0.0815587 14.8188 0.631804 15.3736L6.99076 20.3195C8.17257 21.2387 9.82745 21.2387 11.0093 20.3195L17.3682 15.3736C18.0816 14.8188 18.2101 13.7907 17.6552 13.0774C17.1004 12.364 16.0723 12.2355 15.359 12.7903L10.6363 16.4635V2.62744Z"
+                  fill="white" />
+              </svg>
+              <span>Download for free</span>
+            </button>
+            <div class="relative">
+              <button class="md:ml-4 px-6 py-3 text-white text-lg rounded-lg  z-10 font-medium"
+                style=" box-shadow: 0 1px 0 0 rgba(82, 84, 209, 0.25), 0 -1px 0 0 rgba(132, 92, 216, 0.25), 1px 0 0 0 rgba(82, 84, 209, 0.25), -1px 0 0 0 rgba(132, 92, 216, 0.25), 1px -1px 0 0 rgba(107, 88, 212, 0.5), -1px 1px 0 0 rgba(107, 88, 212, 0.5), 1px 1px 0 0 rgba(56, 79, 205, 0.75), -1px -1px 0 0 rgba(157, 96, 219, 0.75);">
+                Get custom icons
+              </button>
+            </div>
           </div>
         </div>
+        <div class="absolute w-full h-full bg-black left-0 top-0 z-0 blur-lg bg-opacity-50">
+        </div>
       </div>
-      <div class="w-full h-screen absolute left-0 top-0 overflow-hidden color-gradient">
-        <img src="./src/assets/coloured_angular_gradient.png" alt="" class="w-full h-full">
+    </div>
+    <div class="w-full h-screen absolute bg-black opacity-10 left-0 top-0 overflow-hidden z-40">
+    </div>
+    <div class="w-full h-screen absolute left-0 top-0 overflow-hidden z-30">
+      <img src="./src/assets/radial_gradient_overlay.png" alt="" class="w-full h-full">
+    </div>
+    <div class="w-full h-screen absolute left-0 top-0 overflow-hidden icon-banner z-20 mix-blend-multiply">
+      <div class="icon-container">
+        <div class="icon-row-1 flex">
+          <img src="./src/assets/icon_row1.png" class="icon-row w-full relative" alt="">
+          <img src="./src/assets/icon_row1.png" class="icon-row w-full relative" alt="">
+        </div>
+        <div class="icon-row-2 flex">
+          <img src="./src/assets/icon_row2.png" class="icon-row w-full relative" alt="">
+          <img src="./src/assets/icon_row2.png" class="icon-row w-full relative" alt="">
+        </div>
+        <div class="icon-row-1 flex">
+          <img src="./src/assets/icon_row3.png" class="icon-row w-full relative" alt="">
+          <img src="./src/assets/icon_row3.png" class="icon-row w-full relative" alt="">
+        </div>
+        <div class="icon-row-2 flex">
+          <img src="./src/assets/icon_row4.png" class="icon-row w-full relative" alt="">
+          <img src="./src/assets/icon_row4.png" class="icon-row w-full relative" alt="">
+        </div>
+        <div class="icon-row-1 flex">
+          <img src="./src/assets/icon_row5.png" class="icon-row w-full relative" alt="">
+          <img src="./src/assets/icon_row5.png" class="icon-row w-full relative" alt="">
+        </div>
+        <div class="icon-row-2 flex">
+          <img src="./src/assets/icon_row6.png" class="icon-row w-full relative" alt="">
+          <img src="./src/assets/icon_row6.png" class="icon-row w-full relative" alt="">
+        </div>
+        <div class="icon-row-1 flex">
+          <img src="./src/assets/icon_row7.png" class="icon-row w-full relative" alt="">
+          <img src="./src/assets/icon_row7.png" class="icon-row w-full relative" alt="">
+        </div>
+        <div class="icon-row-2 flex">
+          <img src="./src/assets/icon_row8.png" class="icon-row w-full relative" alt="">
+          <img src="./src/assets/icon_row8.png" class="icon-row w-full relative" alt="">
+        </div>
+        <div class="icon-row-1 flex">
+          <img src="./src/assets/icon_row9.png" class="icon-row w-full relative" alt="">
+          <img src="./src/assets/icon_row9.png" class="icon-row w-full relative" alt="">
+        </div>
+        <div class="icon-row-2 flex">
+          <img src="./src/assets/icon_row10.png" class="icon-row w-full relative" alt="">
+          <img src="./src/assets/icon_row10.png" class="icon-row w-full relative" alt="">
+        </div>
+        <div class="icon-row-1 flex">
+          <img src="./src/assets/icon_row1.png" class="icon-row w-full relative" alt="">
+          <img src="./src/assets/icon_row1.png" class="icon-row w-full relative" alt="">
+        </div>
       </div>
-    </header>
-    <script type="module" src="./src/main.js"></script>
-  </body>
+    </div>
+    <div class="w-full h-screen absolute left-0 top-0 overflow-hidden color-gradient">
+      <img src="./src/assets/coloured_angular_gradient.png" alt="" class="w-full h-full">
+    </div>
+  </header>
+
+
+
+  <script type="module" src="./src/main.js"></script>
+</body>
+
 </html>
