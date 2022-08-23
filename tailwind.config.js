@@ -8,8 +8,12 @@ module.exports = {
         ftBlack: {
           100: '#060606'
         },
+        ftWhite: {
+          100: '#F6F5FF'
+        },
         ftGrey: {
-          100: '#8C8DAF'
+          100: '#8C8DAF',
+          200: '#1D1C2D'
         },
         ftPurple: {
           100: '#B070F1',

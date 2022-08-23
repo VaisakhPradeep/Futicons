@@ -37,7 +37,13 @@ body {
 
 @layer components {
   .heading-1 {
-    @apply text-5xl font-semibold;
+    @apply text-6xl font-semibold;
+  }
+}
+
+@layer components {
+  .heading-2 {
+    @apply text-4xl font-semibold;
   }
 }
 
@@ -48,8 +54,26 @@ body {
 }
 
 @layer components {
+  .blue-gradient-2 {
+    @apply bg-gradient-to-r from-ftPurple-300 via-ftPurple-100 to-ftBlue-100;
+  }
+}
+
+@layer components {
   .button-primary-large {
-    @apply px-6 py-3 text-white blue-gradient-1 flex justify-center items-center text-lg rounded-lg font-medium
+    @apply px-6 py-3 text-white blue-gradient-1 flex justify-center items-center text-lg rounded-lg font-medium hover:shadow-2xl hover:shadow-indigo-500/40 hover:text-opacity-80
+  }
+}
+
+@layer components {
+  .ghost-button {
+    @apply text-ftGrey-100 text-sm z-10 font-medium hover:opacity-80 flex items-center font-semibold
+  }
+}
+
+@layer components {
+  .page-layout-1 {
+    @apply w-1/2 mx-auto max-w-screen-md
   }
 }
 
