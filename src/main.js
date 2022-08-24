@@ -1,14 +1,20 @@
 import './index.css'
 import iconset from './icons.json'
 
-const iconContainer = document.querySelector("#icon-list")
+const iconContainer = document.querySelector("#icon-list");
+const actionFooter = document.querySelector("#action-footer");
+const iconCategory = document.querySelector("#icon-category");
+const iconName = document.querySelector("#icon-name");
+const downloadIconButton = document.querySelector("#download-icon-btn");
+iconCategory.innerHTML = "";
+iconName.innerHTML = "";
 let categories = '';
 const iconsPerRow = 5;
 
 
 
 
-iconset.forEach(category => {
+iconset.forEach((category, index) => {
     let rows = '';
     const rowCount = Math.ceil(Number(category.icons.length/iconsPerRow));
     const iconCount = category.icons.length;
@@ -16,12 +22,12 @@ iconset.forEach(category => {
     for (let i=0; i<rowCount; i++){
         let icons = '';
         const isLastRow = (i===rowCount-1);
-        let iconClassnames = `"hover:bg-ftGrey-200 w-20 h-20 cursor-pointer p-4 rounded-[12px] flex justify-center items-center relative"`;
+        let iconClassnames = `"hover:bg-ftGrey-200 w-20 h-20 cursor-pointer p-4 rounded-[12px] flex justify-center items-center relative icon"`;
         let dummyIconClassnames = `"hover:bg-ftGrey-200 w-20 h-20 p-4 rounded-[12px] opacity-0 flex justify-center items-center relative"`;
         for (let j = 0; j < iconsPerRow; j++) {
             if(!isLastRow) {
                 icons += 
-                `<div class=${iconClassnames}>
+                `<div class=${iconClassnames} data-index=${index+'-'+(i*iconsPerRow + j)}>
                     <img class="w-full" src=${category.icons[i*iconsPerRow + j].outlinePath} alt="">
                 </div>`
             }
@@ -29,7 +35,7 @@ iconset.forEach(category => {
             else {
                 if(j<lastRowIconCount) {
                     icons += 
-                    `<div class=${iconClassnames}>
+                    `<div class=${iconClassnames} data-index=${index+'-'+(i*iconsPerRow + j)}>
                         <img class="w-full" src=${category.icons[i*iconsPerRow + j].outlinePath} alt="">
                     </div>`
                 }
@@ -66,7 +72,71 @@ iconset.forEach(category => {
     
 });
 
-
-// row.innerHTML = icons;
-// iconWrap.appendChild(row)
 iconContainer.innerHTML = categories
+
+const icons = document.getElementsByClassName('icon');
+addEventListenerList(icons, 'click', selectIcon);
+
+function selectIcon(e) {
+    const selectedIcon = e.currentTarget;
+    for (let i = 0, len = icons.length; i < len; i++) {
+        icons[i].style.cssText = '';
+    }
+    selectedIcon.style.cssText = "box-shadow: 0 1px 0 0 rgba(82, 84, 209, 0.25), 0 -1px 0 0 rgba(132, 92, 216, 0.25), 1px 0 0 0 rgba(82, 84, 209, 0.25), -1px 0 0 0 rgba(132, 92, 216, 0.25), 1px -1px 0 0 rgba(107, 88, 212, 0.5), -1px 1px 0 0 rgba(107, 88, 212, 0.5), 1px 1px 0 0 rgba(56, 79, 205, 0.75), -1px -1px 0 0 rgba(157, 96, 219, 0.75);"
+    const iconIndices = e.currentTarget.dataset.index;
+    const categoryIndex = iconIndices.split("-")[0];
+    const iconIndex = iconIndices.split("-")[1];
+    iconCategory.innerHTML = `${iconset[categoryIndex].categoryShortName} / `;
+    iconName.innerHTML = iconset[categoryIndex].icons[iconIndex].name;
+    downloadIconButton.dataset.index = e.currentTarget.dataset.index;
+    actionFooter.classList.remove("hide");
+    actionFooter.classList.add("show");
+}
+
+function clearIconSelection(e) {
+    const elClass = e.target.classList;
+    const elParentClass = e.target.parentElement.classList;
+    // if(elClass.contains("icon") || elParentClass.contains("icon") || elClass.contains("download-icon") || elParentClass.contains("download-icon") || elClass.contains("dummy-anchor")) {
+    if(elClass.contains("icon") || elParentClass.contains("icon") || actionFooter.contains(e.target) || elClass.contains("dummy-anchor")) {
+        return;
+    }
+    else {
+        for (let i = 0, len = icons.length; i < len; i++) {
+            icons[i].style.cssText = '';
+        }
+        actionFooter.classList.remove("show");
+        actionFooter.classList.add("hide");
+
+    }
+}
+
+function addEventListenerList(list, event, fn) {
+    for (let i = 0, len = list.length; i < len; i++) {
+        list[i].addEventListener(event, fn, false);
+    }
+}
+
+document.addEventListener("click", clearIconSelection);
+document.onkeydown = function(evt) {
+    evt = evt || window.event;
+    if (evt.key === "Escape") {
+        clearIconSelection(evt)
+    }
+};
+
+function downloadIcon(e) {
+    const iconIndices = e.currentTarget.dataset.index;
+    const categoryIndex = iconIndices.split("-")[0];
+    const iconIndex = iconIndices.split("-")[1];
+    const iconPath = iconset[categoryIndex].icons[iconIndex].outlinePath;
+    const iconName = iconset[categoryIndex].icons[iconIndex].name;
+    const anchor = document.createElement("a");
+    anchor.href = iconPath;
+    anchor.className = "dummy-anchor"
+    anchor.download = iconName;
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+}
+
+downloadIconButton.addEventListener("click", downloadIcon)

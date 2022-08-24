@@ -66,6 +66,12 @@ body {
 }
 
 @layer components {
+  .button-primary-medium {
+    @apply px-4 py-2 text-white blue-gradient-1 flex justify-center items-center rounded-lg font-medium hover:shadow-2xl hover:shadow-indigo-500/40 hover:text-opacity-80
+  }
+}
+
+@layer components {
   .ghost-button {
     @apply text-ftGrey-100 text-sm z-10 font-medium hover:opacity-80 flex items-center font-semibold
   }
@@ -96,6 +102,14 @@ body {
 .color-gradient {
   animation: flickerFix 40s infinite linear;
   animation-delay: 20s;
+}
+
+#action-footer.hide {
+  transform: translateY(100px);
+}
+
+#action-footer.show {
+  animation: slideUp 0.3s ease-out;
 }
 
 
@@ -130,6 +144,16 @@ body {
 
   55% {
     opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+  }
+
+  100% {
+    transform: translateY(0px);
   }
 }
 
