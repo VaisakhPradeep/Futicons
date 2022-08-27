@@ -112,6 +112,10 @@ body {
   animation: slideUp 0.3s ease-out;
 }
 
+.icon-format-selection.active {
+  color: white;
+}
+
 
 @keyframes moveRight {
   from {

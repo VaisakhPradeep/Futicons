@@ -6,6 +6,8 @@ const actionFooter = document.querySelector("#action-footer");
 const iconCategory = document.querySelector("#icon-category");
 const iconName = document.querySelector("#icon-name");
 const downloadIconButton = document.querySelector("#download-icon-btn");
+const svgSelector = document.querySelector(".svg-selection");
+const pngSelector = document.querySelector(".png-selection");
 iconCategory.innerHTML = "";
 iconName.innerHTML = "";
 let categories = '';
@@ -128,7 +130,14 @@ function downloadIcon(e) {
     const iconIndices = e.currentTarget.dataset.index;
     const categoryIndex = iconIndices.split("-")[0];
     const iconIndex = iconIndices.split("-")[1];
-    const iconPath = iconset[categoryIndex].icons[iconIndex].outlinePath;
+    let iconPath = '';
+    if(svgSelector.classList.contains("active")){
+        iconPath = iconset[categoryIndex].icons[iconIndex].outlinePath;
+    }
+    else {
+        iconPath = iconset[categoryIndex].icons[iconIndex].outlinePath.replaceAll("svg","png");
+        console.log(iconPath)
+    }
     const iconName = iconset[categoryIndex].icons[iconIndex].name;
     const anchor = document.createElement("a");
     anchor.href = iconPath;
@@ -140,3 +149,21 @@ function downloadIcon(e) {
 }
 
 downloadIconButton.addEventListener("click", downloadIcon)
+
+function iconFormatSelection(e,format) {
+    if(format==="svg"){
+        if(!svgSelector.classList.contains("active")) {
+            svgSelector.classList.add("active");
+            pngSelector.classList.remove("active");
+        }
+    }
+    else if(format==="png"){
+        if(!pngSelector.classList.contains("active")) {
+            pngSelector.classList.add("active");
+            svgSelector.classList.remove("active");
+        }
+    }
+}
+
+svgSelector.addEventListener("click", (e)=>iconFormatSelection(e,'svg'));
+pngSelector.addEventListener("click", (e)=>iconFormatSelection(e,'png'));
