@@ -13,7 +13,6 @@ iconName.innerHTML = "";
 let categories = '';
 const iconsPerRow = 5;
 
-console.log(images)
 iconset.forEach((category, index) => {
     let rows = '';
     const rowCount = Math.ceil(Number(category.icons.length/iconsPerRow));
