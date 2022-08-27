@@ -1,5 +1,11 @@
 import './index.css'
 import iconset from './icons.json'
+const images = import.meta.glob("/src/assets/**/*.png",{
+    import: 'default',
+    eager: true
+  });
+
+
 
 const iconContainer = document.querySelector("#icon-list");
 const actionFooter = document.querySelector("#action-footer");
@@ -13,9 +19,7 @@ iconName.innerHTML = "";
 let categories = '';
 const iconsPerRow = 5;
 
-
-
-
+console.log(images)
 iconset.forEach((category, index) => {
     let rows = '';
     const rowCount = Math.ceil(Number(category.icons.length/iconsPerRow));
