@@ -1,11 +1,5 @@
 import './index.css'
 import iconset from './icons.json'
-const images = import.meta.glob("/src/assets/**/*.png",{
-    import: 'default',
-    eager: true
-  });
-
-
 
 const iconContainer = document.querySelector("#icon-list");
 const actionFooter = document.querySelector("#action-footer");
