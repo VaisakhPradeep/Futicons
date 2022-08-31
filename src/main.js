@@ -8,6 +8,7 @@ const iconName = document.querySelector("#icon-name");
 const downloadIconButton = document.querySelector("#download-icon-btn");
 const svgSelector = document.querySelector(".svg-selection");
 const pngSelector = document.querySelector(".png-selection");
+const light = document.querySelector("#light");
 iconCategory.innerHTML = "";
 iconName.innerHTML = "";
 let categories = '';
@@ -21,8 +22,8 @@ iconset.forEach((category, index) => {
     for (let i=0; i<rowCount; i++){
         let icons = '';
         const isLastRow = (i===rowCount-1);
-        let iconClassnames = `"hover:bg-ftGrey-200 w-20 h-20 cursor-pointer p-4 rounded-[12px] flex justify-center items-center relative icon"`;
-        let dummyIconClassnames = `"hover:bg-ftGrey-200 w-20 h-20 p-4 rounded-[12px] opacity-0 flex justify-center items-center relative"`;
+        let iconClassnames = `"hover:bg-ftGrey-200 w-24 h-24 cursor-pointer p-6 rounded-[12px] flex justify-center items-center relative icon"`;
+        let dummyIconClassnames = `"hover:bg-ftGrey-200 w-24 h-24 p-6 rounded-[12px] opacity-0 flex justify-center items-center relative"`;
         for (let j = 0; j < iconsPerRow; j++) {
             if(!isLastRow) {
                 icons += 
@@ -52,9 +53,9 @@ iconset.forEach((category, index) => {
 
     
     categories += 
-    `<div class="mt-24">
+    `<div class="mt-32">
         <div class="icon-header flex justify-between items-center">
-        <h2 class="heading-2 blue-gradient-1 inline-block bg-clip-text text-transparent">${category.categoryName}</h2>
+        <h2 class="heading-2 blue-gradient-2 inline-block bg-clip-text text-transparent">${category.categoryName}</h2>
         <button class="ghost-button">
             <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -164,3 +165,11 @@ function iconFormatSelection(e,format) {
 
 svgSelector.addEventListener("click", (e)=>iconFormatSelection(e,'svg'));
 pngSelector.addEventListener("click", (e)=>iconFormatSelection(e,'png'));
+
+
+document.addEventListener("mousemove", moveLight)
+
+function moveLight(e) {
+    light.style.top = e.clientY-112+"px";
+    light.style.left = e.clientX-112+"px";
+}

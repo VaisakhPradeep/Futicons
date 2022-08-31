@@ -43,19 +43,19 @@ body {
 
 @layer components {
   .heading-2 {
-    @apply text-4xl font-semibold;
+    @apply text-3xl font-semibold;
   }
 }
 
 @layer components {
   .blue-gradient-1 {
-    @apply bg-gradient-to-r from-ftPurple-400 via-ftPurple-200 to-ftBlue-200;
+    @apply bg-gradient-to-r from-ftPurple-400 via-ftPurple-300 to-ftBlue-200;
   }
 }
 
 @layer components {
   .blue-gradient-2 {
-    @apply bg-gradient-to-r from-ftPurple-300 via-ftPurple-100 to-ftBlue-100;
+    @apply bg-gradient-to-r from-ftBlue-100 via-ftPurple-200 to-ftPurple-100;
   }
 }
 
