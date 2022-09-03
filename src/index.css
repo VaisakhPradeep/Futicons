@@ -116,6 +116,10 @@ body {
   color: white;
 }
 
+.tab.active > span {
+  color: white;
+}
+
 
 @keyframes moveRight {
   from {
