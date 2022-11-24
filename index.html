@@ -6,12 +6,12 @@
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Futicons</title>
-  <script type="module" crossorigin src="/assets/index.c550d6f6.js"></script>
-    <link rel="stylesheet" href="/assets/index.5a0db376.css">
+  <script type="module" crossorigin src="/assets/index.263f2792.js"></script>
+    <link rel="stylesheet" href="/assets/index.150144a2.css">
   </head>
 
 <body class="bg-ftBlack-100">
-  <header class="min-h-screen w-full bg-black relative">
+  <header class="min-h-screen w-full bg-black relative" id="hero-section">
     <nav></nav>
     <div class="w-full h-screen flex justify-center items-center">
       <!-- <div class="z-50 backdrop-blur-sm bg-black/20 shadow-lg shadow-black-500/50 p-12"> -->
@@ -44,7 +44,9 @@
         </div>
       </div>
     </div>
-    <div class="w-full h-screen absolute bg-black opacity-10 left-0 top-0 overflow-hidden z-40">
+    <div class="w-56 h-56 absolute bg-white left-80 top-40 bg-white z-40 rounded-full mix-blend-soft-light  blur-3xl" id="light">
+    </div>
+    <div class="w-full h-screen absolute bg-black opacity-20 left-0 top-0 overflow-hidden z-40">
     </div>
     <div class="w-full h-screen absolute left-0 top-0 overflow-hidden z-30">
       <img src="/assets/radial_gradient_overlay.5e99eac1.png" alt="" class="w-full h-full">
@@ -102,8 +104,22 @@
     </div>
   </header>
 
-  <section class="page-layout-1">
-    <div id="icon-list">
+  <section class="mt-24">
+    <div class="tabs flex justify-center sticky top-0 bg-ftBlack-100 z-50 py-4 backdrop-blur-md bg-ftBlack-100/30">
+      <div class="tab-container flex border border-ftGrey-100 border-opacity-70 rounded-lg">
+        <div id="tab1" class="px-8 py-4 cursor-pointer flex items-center line-tab tab active">
+          <span class="text-ftGrey-100 text-lg active">Line</span>
+          <div class="bg-ftGrey-200 px-1 rounded-sm ml-2">
+            <span class="blue-gradient-2 inline-block bg-clip-text text-transparent text-center text-xs font-medium tracking-widest">FREE</span>
+          </div>
+        </div>
+        <div id="tab2" class="px-8 py-4 cursor-pointer solid-tab tab">
+          <span class="text-ftGrey-100 text-lg">Solid</span>
+        </div>
+      </div>
+    </div>
+
+    <div id="icon-list" class="page-layout-1 min-h-screen">
       <div>
         <div class="icon-header flex justify-between items-center">
           <h2 class="heading-2 blue-gradient-1 inline-block bg-clip-text text-transparent">Virtual Reality</h2>
@@ -118,6 +134,22 @@
         </div>
         <div class="icon-wrap">
         </div>
+      </div>
+    </div>
+
+    <div id="icon-list-2" class="page-layout-1 min-h-screen" style="display: none;">
+      <div class="icon-header flex justify-between items-center">
+        <h2 class="heading-2 blue-gradient-1 inline-block bg-clip-text text-transparent">Virtual Reality 2</h2>
+        <button class="ghost-button">
+          <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+              d="M6.5 1C6.5 0.447715 6.05228 0 5.5 0C4.94772 0 4.5 0.447715 4.5 1V9.45537L1.61399 7.21069C1.17804 6.87162 0.549764 6.95016 0.210694 7.38611C-0.128376 7.82205 -0.0498418 8.45033 0.386105 8.7894L4.27217 11.8119C4.99439 12.3736 6.00571 12.3736 6.72793 11.8119L10.614 8.7894C11.0499 8.45033 11.1285 7.82205 10.7894 7.38611C10.4503 6.95016 9.82205 6.87162 9.38611 7.21069L6.5 9.45544V1Z"
+              fill="#8C8DAF" />
+          </svg>
+          <span class="ml-2">DOWNLOAD</span>
+        </button>
+      </div>
+      <div class="icon-wrap">
       </div>
     </div>
   </section>
