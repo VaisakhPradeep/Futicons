@@ -68,7 +68,7 @@ function populateIcons(type) {
             <h2 class="heading-2 blue-gradient-2 inline-block bg-clip-text text-transparent">${category.categoryName}</h2>
             ${
                 type==="line" ?
-                `<button class="ghost-button category-download-btn hidden md:visible" data-index=${index}>
+                `<button class="ghost-button category-download-btn hidden md:flex" data-index=${index}>
                 <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
                     d="M6.5 1C6.5 0.447715 6.05228 0 5.5 0C4.94772 0 4.5 0.447715 4.5 1V9.45537L1.61399 7.21069C1.17804 6.87162 0.549764 6.95016 0.210694 7.38611C-0.128376 7.82205 -0.0498418 8.45033 0.386105 8.7894L4.27217 11.8119C4.99439 12.3736 6.00571 12.3736 6.72793 11.8119L10.614 8.7894C11.0499 8.45033 11.1285 7.82205 10.7894 7.38611C10.4503 6.95016 9.82205 6.87162 9.38611 7.21069L6.5 9.45544V1Z"
@@ -77,7 +77,7 @@ function populateIcons(type) {
                 <span class="ml-2">DOWNLOAD</span>
             </button>`:
             `
-            <a href="https://vaisakhpradeep.gumroad.com/l/futicons" target="_blank" class="hidden md:visible">
+            <a href="https://vaisakhpradeep.gumroad.com/l/futicons" target="_blank" class="hidden md:inline-block">
             <button class="ghost-button" data-index=${index}>
                 <svg width="11" height="13" viewBox="0 0 11 13" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd"
