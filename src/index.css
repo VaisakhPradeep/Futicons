@@ -172,11 +172,25 @@ body {
 
 /* Media queries -------------- */
 
+
 @media (max-width: 1200px) {
   .icon-container {
     transform: rotate(-21deg) translate(0%, -10%) scale(1.2);
   }
 }
+
+@media (min-width: 1600px) {
+  .icon-container {
+    transform: rotate(-21deg) translate(0%, 8%) scale(1.5);
+  }
+}
+
+@media (min-width: 2000px) {
+  .icon-container {
+    transform: rotate(-21deg) translate(0%, 30%) scale(2.2);
+  }
+}
+
 
 @media (max-aspect-ratio: 16/11) {
   .icon-container {
